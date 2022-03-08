@@ -6,10 +6,10 @@ import { sanityClient, urlFor } from '../sanity'
 import { Post } from '../typings'
 
 interface Props {
-  posts?: [Post]
+  posts: [Post]
 }
 
-const Home: NextPage = ({ posts }: Props) => {
+const Home: NextPage<Props> = ({ posts }) => {
   return (
     <div className="mx-auto max-w-7xl">
       <Head>
