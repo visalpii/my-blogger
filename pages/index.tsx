@@ -6,7 +6,7 @@ import { sanityClient, urlFor } from '../sanity'
 import { Post } from '../typings'
 
 interface Props {
-  posts: [Post]
+  posts?: [Post]
 }
 
 const Home: NextPage = ({ posts }: Props) => {
