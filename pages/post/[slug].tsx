@@ -67,6 +67,7 @@ function Post({ post }: Props) {
           </p>
         </div>
         <div className="mt-10">
+          {/* React Component for rendering rich text content */}
           <PortableText
             className=""
             content={post.body}
@@ -96,7 +97,10 @@ function Post({ post }: Props) {
             <h3 className="text-3xl font-bold">
               Thank you for submitting your comment!
             </h3>
-            <p>Once it has been approved, it will appear below!</p>
+            <p>
+              Once it has been approved via admin dashboard, it will appear
+              below!
+            </p>
           </div>
         ) : (
           <form
@@ -201,6 +205,7 @@ export const getStaticPaths = async () => {
   return { paths, fallback: 'blocking' }
 }
 
+// ISR ensures the page is revalidated and refreshed every minute with latest data
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const query = `*[_type == 'post' && slug.current == $slug][0]{
     _id,

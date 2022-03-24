@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 const sanityClient = require('@sanity/client')
 
@@ -10,6 +9,7 @@ const config = {
 }
 const client = sanityClient(config)
 
+// Handling POST request from front-end - adding user comment to Sanity.io database
 export default async function createComment(
   req: NextApiRequest,
   res: NextApiResponse
